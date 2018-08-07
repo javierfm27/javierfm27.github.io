@@ -11,7 +11,7 @@ body {
   font-size: 1rem;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   line-height: 1.6;
-  color: #2c2f37;
+  color: red;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -moz-font-feature-settings: "liga", "kern";
