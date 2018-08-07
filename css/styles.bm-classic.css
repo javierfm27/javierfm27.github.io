@@ -16,7 +16,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   -moz-font-feature-settings: "liga", "kern";
   text-rendering: optimizelegibility;
-  background-color: #ff1;
+  background-color: #fff;
 }
 
 a {
