@@ -5,7 +5,20 @@
 <body>
 
   {% include navbar.html %}
-  {{ content }}
+
+  <div class="container g-py-100">
+    {{ content }}
+    <ul>
+      {% for post in site.posts %}
+        <li>
+          <a href="{{post.url}}">{{post.title}} {{post.date}}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  {% include footer.html %}
+  {% include javascript.html %}
 
 </body>
 
