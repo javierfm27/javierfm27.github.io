@@ -1,5 +1,0 @@
----
-layout: post
-title: Primer Post de DOC
----
-PRIMERA PRUEBA USANDO MARKDOWN Y HACIENDO QUE ESTO SEA UNA PUBLICACIÓN
