@@ -26,3 +26,6 @@ plugins:
   - jekyll-redirect-from
   - jekyll-sitemap
   - jekyll-github-metadata
+
+#permalink
+permalink: /:path/:title.html
