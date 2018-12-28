@@ -16,11 +16,11 @@
             {%for element in breadcrumb %}
             {% if element contains '.html' %}
               <li class="list-inline-item g-color-primary">
-                <span>{{ element | remove: '.html' | capitalize }}</span>
+                 <span><!--{{ element | remove: '.html' | replace: "_"," " | capitalize }}-->{{page.title}}</span>
               </li>
             {% else %}
               <li class="list-inline-item g-mr-5">
-                <a class="u-link-v5 g-color-main" href="#!">{{element|capitalize}}</a>
+                <a class="u-link-v5 g-color-main" href="#!">{{ element |capitalize }}</a>
                 <i class="g-color-gray-light-v2 g-ml-5">/</i>
               </li>
             {% endif %}
