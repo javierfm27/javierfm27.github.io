@@ -6,24 +6,26 @@
           <h2 class="h3 g-font-weight-300 w-100 g-mb-10 g-mb-0--md">{{page.title}}</h2>
         </div>
 
-        {% assign breadcrumb = page.path | split: "/" %}
         <div class="align-self-center ml-auto">
           <ul class="u-list-inline">
             <li class="list-inline-item g-mr-5">
               <a class="u-link-v5 g-color-main" href="{{site.url}}">Home</a>
               <i class="g-color-gray-light-v2 g-ml-5">/</i>
             </li>
+            {% assign breadcrumb = page.path | split: "/" %}
             {%for element in breadcrumb %}
-            {% if element contains '.html' %}
-              <li class="list-inline-item g-color-primary">
-                 <span><!--{{ element | remove: '.html' | replace: "_"," " | capitalize }}-->{{page.title}}</span>
-              </li>
-            {% else %}
-              <li class="list-inline-item g-mr-5">
-                <a class="u-link-v5 g-color-main" href="#!">{{ element |capitalize }}</a>
-                <i class="g-color-gray-light-v2 g-ml-5">/</i>
-              </li>
-            {% endif %}
+               {% if element contains '.html' %}
+                {% if element != 'index.html'%}
+                  <li class="list-inline-item g-mr-5">
+                     <!--{{ element | remove: '.html' | replace: "_"," " | capitalize }}-->{{page.title}}
+                  </li>
+                {% endif %}
+              {% else %}
+                <li class="list-inline-item g-mr-5">
+                  <a class="u-link-v5 g-color-main">{{ element |capitalize }}</a>
+                  <i class="g-color-gray-light-v2 g-ml-5">/</i>
+                </li>
+              {% endif %}
             {% endfor %}
           </ul>
         </div>
