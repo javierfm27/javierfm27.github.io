@@ -1,10 +1,7 @@
 ---
 layout: blog
 title: Blog
-date: 30 de Diciembre de 2018
-title_blog: Prueba de Blog 1
-author: Javier Fernández
-path_author: /assets/img/inline/inline1.png
+published: true
 ---
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec gravida velit quis nunc euismod, ut bibendum ligula venenatis. Ut eget tincidunt purus. Vestibulum rutrum, justo ut blandit fringilla, ipsum dui malesuada velit, id semper leo mi ut mi. Suspendisse eleifend ac orci quis lacinia. Phasellus consequat elementum lectus non hendrerit. In sed massa ullamcorper, sagittis nisl in, vestibulum felis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque vehicula purus ante, et dapibus nulla volutpat sit amet. Sed sagittis ante nisl, ut tristique nibh tincidunt et. Duis tincidunt ac nulla et tristique. Aliquam commodo velit quis lectus auctor eleifend. Nunc aliquet lacinia eleifend. Praesent fringilla venenatis est nec euismod. In varius, purus nec condimentum porttitor, tortor est lacinia mauris, id pellentesque mi massa non turpis. Quisque auctor convallis eros, in vulputate libero placerat a.
 
