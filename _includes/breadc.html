@@ -12,6 +12,7 @@
               <a class="u-link-v5 g-color-main" href="{{site.url}}">Home</a>
               <i class="g-color-gray-light-v2 g-ml-5">/</i>
             </li>
+            {% assign arrayUniq = "contact,releases,blog" | split: "," %}
             {% assign breadcrumb = page.path | split: "/" %}
             {%for element in breadcrumb %}
                {% if element contains '.html' %}
@@ -23,7 +24,11 @@
               {% else %}
                 <li class="list-inline-item g-mr-5">
                   <a class="u-link-v5 g-color-main">{{ element |capitalize }}</a>
-                  <i class="g-color-gray-light-v2 g-ml-5">/</i>
+                  {% if arrayUniq contains element %}
+
+                  {% else %}
+                    <i class="g-color-gray-light-v2 g-ml-5">/</i>
+                  {% endif %}
                 </li>
               {% endif %}
             {% endfor %}
