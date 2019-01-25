@@ -15,7 +15,7 @@
             {% assign arrayUniq = "contact,releases,blog" | split: "," %}
             {% assign breadcrumb = page.path | split: "/" %}
             {%for element in breadcrumb %}
-               {% if element contains '.html' %}
+               {% if element contains '.html' or element contains '.md' %}
                 {% if element != 'index.html'%}
                   <li class="list-inline-item g-mr-5">
                      <!--{{ element | remove: '.html' | replace: "_"," " | capitalize }}-->{{page.title}}

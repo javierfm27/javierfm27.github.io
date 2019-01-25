@@ -20,13 +20,14 @@ title: pyCardio DOC
 
 # Build settings
 markdown: kramdown
+highlighter: rouge
 theme: minima
 plugins:
   - jekyll-feed
   - jekyll-redirect-from
   - jekyll-sitemap
   - jekyll-github-metadata
-  
+
 future: true
 
 #permalink
