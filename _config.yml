@@ -32,3 +32,6 @@ future: true
 
 #permalink
 permalink: /:path/:title.html
+
+#Variable for static files
+path_assets: /assets/

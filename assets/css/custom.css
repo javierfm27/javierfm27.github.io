@@ -1650,6 +1650,13 @@ input[type="radio"]:checked + * .g-overlay-primary-0_9--checked::after,
 }
 
 /*------------------------------------
+  Highlight Syntax
+--------------------------------------*/
+pre{
+  background-color: black;
+}
+
+/*------------------------------------
   Keyframes
 ------------------------------------*/
 @keyframes sonarEffect-primary {
