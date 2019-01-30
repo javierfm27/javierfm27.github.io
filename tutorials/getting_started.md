@@ -65,4 +65,5 @@ import Javi
 Prueba de la variable de entorno de file.path -> {{site.path_assets}}
 
 A continuación, vamos a probar a incluir una gráfica.
-![Test of include graphic](/assets/img/maps/Figure_test.png)
+<!-- Al necesitar reescalarla, tenemos que incluirla mediante HTML -->
+<img alt="HOLI" src="/assets/img/maps/Figure_test.png" width="500" height="200">
