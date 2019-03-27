@@ -17,7 +17,7 @@
 
   <!-- CSS -->
   {% include css.html %}
-  </head>
+</head>
 
 
 <body>
@@ -52,10 +52,10 @@
         <div class="col-lg-4 u-bg-overlay g-bg-img-hero g-bg-cyan-opacity-0_9--after g-color-white text-center g-pa-60" style="background-image: url(/assets/img/bg/iconblock2.jpg);">
           <div class="u-bg-overlay__inner">
             <span class="u-icon-v2 u-icon-size--lg u-shadow-v24 rounded-circle g-mb-25">
-                <i class="icon-communication-108 u-line-icon-pro"></i>
-              </span>
+              <i class="icon-communication-108 u-line-icon-pro"></i>
+            </span>
             <h3 class="h5 text-uppercase g-font-weight-600 g-mb-15"></h3>
-                        <p class="g-font-size-16 g-mb-20">Obtaining PyCardio and his libraries</p>
+            <p class="g-font-size-16 g-mb-20">Obtaining PyCardio and his libraries</p>
             <a class="btn u-shadow-v21 g-bg-white g-color-cyan g-color-white--hover g-bg-white-opacity-0_4--hover g-font-size-12 text-uppercase g-font-weight-600 g-rounded-50 g-py-12 g-px-20" href="{{site.url}}/documentation/overview.html">Install</a>
           </div>
         </div>
@@ -65,8 +65,8 @@
         <div class="col-lg-4 u-bg-overlay g-bg-img-hero g-bg-purple-opacity-0_9--after g-color-white text-center g-pa-60" style="background-image: url(/assets/img/bg/iconblock3.jpg);">
           <div class="u-bg-overlay__inner">
             <span class="u-icon-v2 u-icon-size--lg u-shadow-v24 rounded-circle g-mb-25">
-                <i class="icon-communication-115 u-line-icon-pro"></i>
-              </span>
+              <i class="icon-communication-115 u-line-icon-pro"></i>
+            </span>
             <h3 class="h5 text-uppercase g-font-weight-600 g-mb-15"></h3>
             <p class="g-font-size-16 g-mb-20">Start using Pycardio in a few simple steps</p>
             <a class="btn u-shadow-v21 g-bg-white g-color-purple g-color-white--hover g-bg-white-opacity-0_4--hover g-font-size-12 text-uppercase g-font-weight-600 g-rounded-50 g-py-12 g-px-20" href="{{site.url}}/tutorials/getting_started.html">Documentation</a>
@@ -78,8 +78,8 @@
         <div class="col-lg-4 u-bg-overlay g-bg-img-hero g-bg-teal-opacity-0_9--after g-color-white text-center g-pa-60" style="background-image: url(/assets/img/bg/iconblock1.jpg);">
           <div class="u-bg-overlay__inner">
             <span class="u-icon-v2 u-icon-size--lg u-shadow-v24 rounded-circle g-mb-25">
-                <i class="icon-communication-029 u-line-icon-pro"></i>
-              </span>
+              <i class="icon-communication-029 u-line-icon-pro"></i>
+            </span>
             <h3 class="h5 text-uppercase g-font-weight-600 g-mb-15"></h3>
             <p class="g-font-size-16 g-mb-20">Take a look of the last release in Github</p>
             <a class="btn u-shadow-v21 g-bg-white g-color-teal g-color-white--hover g-bg-white-opacity-0_4--hover g-font-size-12 text-uppercase g-font-weight-600 g-rounded-50 g-py-12 g-px-20" href="https://github.com/javierfm27/PyCardio/releases/latest">Releases</a>
@@ -91,11 +91,45 @@
     <!-- End Icon Blocks -->
 
     <!-- Brief Overview -->
-    <div class="container">
-      <h4>Overview</h4>
+    <div id="main-overview" class="container">
       <div class="row">
-        <div class="col-8" style="border-style: solid; margin-bottom: 4px"> BRIEF OVERVIEW </div>
-        <div class="col-4" style="border-style: solid; margin-bottom: 4px"> GIF </div>
+        <div class="col-lg-8 align-self-center">
+          <h2 class="u-heading-v2__title g-mb-10">Overview</h2>
+          <h4 class="g-font-weight-200">PyCardio</h4>
+          <p class="lead g-mb-30">Python module to perform Cardiac Signal Analysis, namely:</p>
+
+          <ul class="list-unstyled g-color-gray-dark-v4 g-mb-40">
+            <li class="d-flex g-mb-10">
+              <i class="icon-check g-color-primary g-mt-5 g-mr-10"></i>
+              <span class="emphasized">ECG analysis</span>:  QRS detection, RR-interval time series extraction, ECG complete delineation
+            </li>
+            <li class="d-flex g-mb-10">
+              <i class="icon-check g-color-primary g-mt-5 g-mr-10"></i>
+              <span class="emphasized">Heart Rate Variability analysis </span>: Heart Rate Variability analysis
+            </li>
+            <li class="d-flex g-mb-10">
+              <i class="icon-check g-color-primary g-mt-5 g-mr-10"></i>
+              <span class="emphasized">Heart Rate Turbulence </span> &nbsp analysis
+            </li>
+            <li class="d-flex g-mb-10">
+              <i class="icon-check g-color-primary g-mt-5 g-mr-10"></i>
+              <span class="emphasized">Atrial Fibrillation </span> &nbsp analysis: both in ECG and intracavitary electrograms.
+            </li>
+            <li class="d-flex g-mb-10">
+              <i class="icon-check g-color-primary g-mt-5 g-mr-10"></i>
+              <span class="emphasized">Ventricular Fibrillation </span> &nbsp Analysis
+            </li>
+            <li class="d-flex g-mb-10">
+              <i class="icon-check g-color-primary g-mt-5 g-mr-10"></i>
+              <span class="emphasized">Arrhythmia </span> &nbsp analysis on 24 holter
+            </li>
+          </ul>
+
+          <a class="btn btn-md u-btn-primary rounded-0 " href="{{site.url}}/documentation/overview.html">Learn More</a>
+        </div>
+        <div class="col-4 align-self-center">
+          <img id="heart-gif" class="img-fluid" src="/assets/img/main/heart.gif" alt="GIF de corázon">
+        </div>
       </div>
     </div>
     <!-- End Brief Overview -->
@@ -122,43 +156,43 @@
             </div>
 
             <address class="g-bg-no-repeat g-font-size-12 mb-0" style="background-image: url(/assets/img/maps/map2.png);">
-          <!-- Location -->
-          <div class="d-flex g-mb-20">
-            <div class="g-mr-10">
-              <span class="u-icon-v3 u-icon-size--xs g-bg-white-opacity-0_1 g-color-white-opacity-0_6">
-                <i class="fa fa-map-marker"></i>
-              </span>
-            </div>
-            <p class="mb-0">795 Folsom Ave, Suite 600, <br> San Francisco, CA 94107 795</p>
-          </div>
-          <!-- End Location -->
+              <!-- Location -->
+              <div class="d-flex g-mb-20">
+                <div class="g-mr-10">
+                  <span class="u-icon-v3 u-icon-size--xs g-bg-white-opacity-0_1 g-color-white-opacity-0_6">
+                    <i class="fa fa-map-marker"></i>
+                  </span>
+                </div>
+                <p class="mb-0">795 Folsom Ave, Suite 600, <br> San Francisco, CA 94107 795</p>
+              </div>
+              <!-- End Location -->
 
-          <!-- Phone -->
-          <div class="d-flex g-mb-20">
-            <div class="g-mr-10">
-              <span class="u-icon-v3 u-icon-size--xs g-bg-white-opacity-0_1 g-color-white-opacity-0_6">
-                <i class="fa fa-phone"></i>
-              </span>
-            </div>
-            <p class="mb-0">(+123) 456 7890 <br> (+123) 456 7891</p>
-          </div>
-          <!-- End Phone -->
+              <!-- Phone -->
+              <div class="d-flex g-mb-20">
+                <div class="g-mr-10">
+                  <span class="u-icon-v3 u-icon-size--xs g-bg-white-opacity-0_1 g-color-white-opacity-0_6">
+                    <i class="fa fa-phone"></i>
+                  </span>
+                </div>
+                <p class="mb-0">(+123) 456 7890 <br> (+123) 456 7891</p>
+              </div>
+              <!-- End Phone -->
 
-          <!-- Email and Website -->
-          <div class="d-flex g-mb-20">
-            <div class="g-mr-10">
-              <span class="u-icon-v3 u-icon-size--xs g-bg-white-opacity-0_1 g-color-white-opacity-0_6">
-                <i class="fa fa-globe"></i>
-              </span>
-            </div>
-            <p class="mb-0">
-              <a class="g-color-white-opacity-0_8 g-color-white--hover" href="mailto:info@htmlstream.com">info@htmlstream.com</a>
-              <br>
-              <a class="g-color-white-opacity-0_8 g-color-white--hover" href="#!">www.htmlstream.com</a>
-            </p>
-          </div>
-          <!-- End Email and Website -->
-        </address>
+              <!-- Email and Website -->
+              <div class="d-flex g-mb-20">
+                <div class="g-mr-10">
+                  <span class="u-icon-v3 u-icon-size--xs g-bg-white-opacity-0_1 g-color-white-opacity-0_6">
+                    <i class="fa fa-globe"></i>
+                  </span>
+                </div>
+                <p class="mb-0">
+                  <a class="g-color-white-opacity-0_8 g-color-white--hover" href="mailto:info@htmlstream.com">info@htmlstream.com</a>
+                  <br>
+                  <a class="g-color-white-opacity-0_8 g-color-white--hover" href="#!">www.htmlstream.com</a>
+                </p>
+              </div>
+              <!-- End Email and Website -->
+            </address>
           </div>
           <!-- End Footer Content -->
         </div>

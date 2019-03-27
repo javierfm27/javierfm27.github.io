@@ -2,3 +2,143 @@
 layout: page
 title: Contact
 ---
+<!-- Figure -->
+<figure class="row">
+  <!-- Main Contact Image -->
+  <div class="col-md-8 col-lg-4 g-mb-30">
+    <img class="w-100" src="" alt="Chief of the project">
+  </div>
+  <!-- END Main Contact Image -->
+
+
+  <!-- Figure Body -->
+  <div class="col-lg-8">
+    <div class="d-flex justify-content-between g-mb-10">
+      <div class="g-mb-20">
+        <h4 class="h5 g-mb-5">Óscar Barquero</h4>
+        <em class="d-block g-font-style-normal g-font-size-default text-uppercase g-color-primary">Project Manager</em>
+      </div>
+
+      <!-- Figure Social Icons -->
+      <ul class="list-inline">
+        <li class="list-inline-item g-mx-2">
+          <a class="u-icon-v3 u-icon-size--xs g-color-gray-light-v1 g-bg-gray-light-v5 g-color-white--hover g-bg-primary--hover rounded-circle" href="https://www.linkedin.com/in/obarquero/">
+            <i class="fa fa-linkedin"></i>
+          </a>
+        </li>
+      </ul>
+      <!-- End Figure Social Icons -->
+    </div>
+
+    <!-- Figure Info -->
+    <div class="g-mb-50">
+      <div class="u-heading-v1-4 g-bg-main g-brd-primary g-mb-10">
+        <h2 class="h3 u-heading-v1__title">Area</h2>
+      </div>
+      <p>Signal Theory and Communications</p>
+
+      <div class="u-heading-v1-4 g-bg-main g-brd-primary g-mb-10">
+        <h2 class="h3 u-heading-v1__title">Short Bio</h2>
+      </div>
+      <p>Óscar Barquero Pérez received the Tech. Telecom. Eng. degree in technical telecommunication engineering from Universidad Carlos III de Madrid, Madrid, Spain, in 2005, and the M.Sc. degree in biomedical engineering from
+        Universidade do Porto,
+        Porto, Portugal, in 2008, and the Ph.D. degree from Universidad Rey Juan Car- los, Madrid, Spain, in 2014. Since 2007, he has been with the Department of Signal Theory and Communications, Universidad Rey Juan Carlos, Madrid. His current
+        research interests include nonlinear time-series analysis, biomedical signal processing, and statistical learning.</p>
+
+      <div class="u-heading-v1-4 g-bg-main g-brd-primary g-mb-10">
+        <h2 class="h3 u-heading-v1__title">Address</h2>
+      </div>
+      <ul class="list-inline">
+        <li>Office D207. Departamental III</li>
+        <li>Universidad Rey Juan Carlos</li>
+        <li>Camino del Molino s/n</li>
+        <li>Fuenlabrada, 28943, Madrid, Spain</li>
+      </ul>
+
+      <div class="u-heading-v1-4 g-bg-main g-brd-primary g-mb-10">
+        <h2 class="h3 u-heading-v1__title">Email</h2>
+      </div>
+      <p> oscar.barquero@urjc.es </p>
+    </div>
+    <!-- End Info -->
+
+  </div>
+  <!-- End Figure Body -->
+</figure>
+<!-- End Figure -->
+
+
+<div class="shortcode-html">
+  <div class="text-center mx-auto g-width-70x--md">
+    <header class="u-heading-v8-2 g-mb-60">
+      <h2 class="u-heading-v8__title text-uppercase g-font-weight-600 g-color-gray-dark-v2 g-mb-25">Contact us</h2>
+      <p class="mb-0">If you have problem, an idea, an improved or a doubt about the funcionality or code. Let's go! Contact Us</p>
+    </header>
+
+    <form>
+      <div class="row">
+        <div class="col-md-6 form-group g-mb-30">
+          <input class="form-control g-color-gray-dark-v5 g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--focus rounded-0 g-py-13 g-px-15" placeholder="Your email"  v-model="from_email" type="text">
+        </div>
+
+        <div class="col-md-6 form-group g-mb-30">
+          <input class="form-control g-color-gray-dark-v5 g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--focus rounded-0 g-py-13 g-px-15" placeholder="Your name" v-model="from_name" type="tel">
+        </div>
+
+        <div class="col-md-12 form-group g-mb-30">
+          <input class="form-control g-color-gray-dark-v5 g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--focus rounded-0 g-py-13 g-px-15" placeholder="Subject" v-model="subject" type="text">
+        </div>
+
+        <div class="col-md-12 form-group g-mb-30">
+          <textarea class="form-control g-color-gray-dark-v5 g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--focus g-resize-none rounded-0 g-py-13 g-px-15" rows="7" v-model="message" placeholder="Message"></textarea>
+        </div>
+      </div>
+
+      <div class="text-center g-m g-mb-20">
+        <button @click="enviar" class="btn u-btn-primary text-uppercase rounded-0 g-px-25 g-py-13" type="submit" role="button">Send Message</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Code for Sent Emails -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.min.js"></script>
+<script src="https://cdn.emailjs.com/dist/email.min.js" type="text/javascript"></script>
+<script>
+    (function(){
+        emailjs.init("user_Hopd6SgEyxvsIFC4VTcCc");
+     })();
+    const vue = new Vue({
+        el: '#app',
+        data(){
+            return {
+                from_name: '',
+                from_email: '',
+                message: '',
+                subject: '',
+            }
+        },
+        methods: {
+            enviar(){
+                let data = {
+                    from_name: this.from_name,
+                    from_email: this.from_email,
+                    message: this.message,
+                    subject: this.subject,
+                };
+
+                emailjs.send("javitofm15_gmail_com","template_SDZsLF1w", data)
+                .then(function(response) {
+                    if(response.text === 'OK'){
+                        alert('El correo se ha enviado de forma exitosa');
+                    }
+                   console.log("SUCCESS. status=%d, text=%s", response.status, response.text);
+                }, function(err) {
+                    alert('Ocurrió un problema al enviar el correo');
+                   console.log("FAILED. error=", err);
+                });
+            }
+        }
+    });
+</script>
+<!--END Code for Sent Email  -->
