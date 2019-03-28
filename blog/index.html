@@ -1,4 +1,38 @@
 ---
-layout: blog
+layout: page
 title: Blog
 ---
+<!-- Blog Minimal Blocks -->
+<div class="container g-pt-40 g-pb-20">
+  <div class="row justify-content-between">
+    <div class="col-lg-9 g-mb-80">
+      <div class="g-pr-20--lg">
+        {% for post_blog in site.categories.blog %}
+        <!-- Blog Minimal Blocks -->
+        <article class="g-mb-50">
+          <div class="g-mb-10">
+            <span class="d-block g-color-gray-dark-v4 g-font-weight-700 g-font-size-12 text-uppercase mb-2">{{post_blog.date | date_to_long_string }}</span>
+            <h2 class="h4 g-color-black g-font-weight-600 mb-3">
+              <a class="u-link-v5 g-color-black g-color-primary--hover" href="{{post_blog.url}}">{{post_blog.title}} </a>
+            </h2>
+            <p class="g-color-gray-dark-v4 g-line-height-1_8">{{ post_blog.content | truncate: 150 }} </p>
+          </div>
+
+          <ul class="list-inline g-brd-y g-brd-gray-light-v3 g-font-size-13 g-py-13 mb-0">
+            <li class="list-inline-item g-color-gray-dark-v4 mr-2">
+              <span class="d-inline-block g-color-gray-dark-v4">
+                <img class="g-g-width-20 g-height-20 rounded-circle mr-2" src="../../assets/img-temp/100x100/img7.jpg" alt="Image Description">
+                {{ post_blog.author }}
+              </span>
+            </li>
+          </ul>
+        </article>
+        {% endfor %}
+        <!-- End Blog Minimal Blocks -->
+      </div>
+    </div>
+
+    {% include blog_panel.html %}
+
+  </div>
+</div>

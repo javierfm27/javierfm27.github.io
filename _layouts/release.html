@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Title -->
+  <title>{{page.title}} | PyCardio</title>
+
+  <!-- Required Meta Tags Always Come First -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="/favicon.ico">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+
+  <!-- CSS LINKS -->
+  {% include css.html %}
+
+  <!-- JS LINKS -->
+  {% include js.html%}
+</head>
+
+<body>
+  <!-- HEADER -NAVBAR  -->
+  {% include header.html %}
+
+  <hr class="u-divider-linear-gradient u-divider-linear-gradient--gray-light-v2 g-my-50">
+
+  <div class="container">
+    <div class="row">
+
+      <!-- CONTENIDO DE RELEASE -->
+      <div class="col-lg-8 u-shadow-v4 g-bg-white g-brd-around g-brd-gray-light-v4 g-line-height-2 g-pa-40 g-mb-30" role="alert">
+        <h3 class="h2 g-font-weight-300 g-mb-20">{{page.title}}</h3>
+        <ul class="u-list-inline g-mb-20">
+          <li class="list-inline-item">
+            <a class="u-tags-v1 g-color-white g-bg-blue g-bg-black--hover g-py-4 g-px-10" href="#">Release</a>
+          </li>
+          <li class="list-inline-item">{{ page.date | date: "%-d %B %Y" }}</li>
+          <li class="list-inline-item g-color-primary">{{page.author}}</li>
+        </ul>
+        {% assign first_char = content | slice: 3 %}
+        <p class="mb-0"><span class="u-dropcap g-color-primary g-mr-10 g-mb-10">{{content | slice: 3}}</span>{{ content | replace_first: first_char}}</p>
+      </div>
+
+      <!-- LIST OF RELEASES -->
+      {% include list_releases.html%}
+
+    </div>
+  </div>
+
+
+
+
+  <!-- FOOTER  -->
+  {% include footer.html %}
+
+  <!-- JS LINKS -->
+  {% include js.html%}
+
+  <!-- JS SCRIPT -->
+  {% include script.html%}
+
+</body>

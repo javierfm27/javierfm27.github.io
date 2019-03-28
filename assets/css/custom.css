@@ -1687,3 +1687,7 @@ pre{
   font: black;
   font-weight: bold;
 }
+
+.list-content{
+  padding-left: 20px;
+}
