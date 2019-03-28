@@ -47,4 +47,38 @@
       $.HSCore.components.HSTabs.init('[role="tablist"]');
     }, 200);
   });
+
+  //For sending emails
+  var email = "";
+  var name = "";
+  var subject = "";
+  var message = "";
+  $(".email-form").focusout(function() {
+    email = $(this).val();
+  });
+  $(".name-form").focusout(function() {
+    name = $(this).val();
+  });
+  $(".subject-form").focusout(function() {
+    subject = $(this).val();
+  });
+  $(".message-form").focusout(function() {
+    message = $(this).val();
+  });
+  (function() {
+    emailjs.init("user_Hopd6SgEyxvsIFC4VTcCc");
+  })();
+
+  $("#enviarEmail").click(function() {
+    var template_params = {
+      from_email: email,
+      subject: subject,
+      from_name: name,
+      message_html: message
+    }
+
+    var service_id = "default_service";
+    var template_id = "template_SDZsLF1w";
+    emailjs.send(service_id, template_id, template_params);
+  });
 </script>

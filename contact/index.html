@@ -78,7 +78,7 @@ title: Contact
     <form>
       <div class="row">
         <div class="col-md-6 form-group g-mb-30">
-          <input class="form-control g-color-gray-dark-v5 g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--focus rounded-0 g-py-13 g-px-15" placeholder="Your email"  v-model="from_email" type="text">
+          <input class="form-control g-color-gray-dark-v5 g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--focus rounded-0 g-py-13 g-px-15 email-form" placeholder="Your email" v-model="from_email" type="text">
         </div>
 
         <div class="col-md-6 form-group g-mb-30">
@@ -95,50 +95,8 @@ title: Contact
       </div>
 
       <div class="text-center g-m g-mb-20">
-        <button @click="enviar" class="btn u-btn-primary text-uppercase rounded-0 g-px-25 g-py-13" type="submit" role="button">Send Message</button>
+        <button id="enviarEmail" @click="enviar" class="btn u-btn-primary text-uppercase rounded-0 g-px-25 g-py-13" type="submit" role="button">Send Message</button>
       </div>
     </form>
   </div>
 </div>
-
-<!-- Code for Sent Emails -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.min.js"></script>
-<script src="https://cdn.emailjs.com/dist/email.min.js" type="text/javascript"></script>
-<script>
-    (function(){
-        emailjs.init("user_Hopd6SgEyxvsIFC4VTcCc");
-     })();
-    const vue = new Vue({
-        el: '#app',
-        data(){
-            return {
-                from_name: '',
-                from_email: '',
-                message: '',
-                subject: '',
-            }
-        },
-        methods: {
-            enviar(){
-                let data = {
-                    from_name: this.from_name,
-                    from_email: this.from_email,
-                    message: this.message,
-                    subject: this.subject,
-                };
-
-                emailjs.send("javitofm15_gmail_com","template_SDZsLF1w", data)
-                .then(function(response) {
-                    if(response.text === 'OK'){
-                        alert('El correo se ha enviado de forma exitosa');
-                    }
-                   console.log("SUCCESS. status=%d, text=%s", response.status, response.text);
-                }, function(err) {
-                    alert('Ocurrió un problema al enviar el correo');
-                   console.log("FAILED. error=", err);
-                });
-            }
-        }
-    });
-</script>
-<!--END Code for Sent Email  -->
