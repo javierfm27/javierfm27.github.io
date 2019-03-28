@@ -5,7 +5,7 @@ author: obarquero
 published: true
 category: [blog]
 ---
-Nos complace informar de que lanzamos nuestro primer módulo. HRV.
+We are pleased to report that we launched our first module. HRV.
 
 This class allows to perform a basic Heart Rate Variability Analysis from an RR-Interval time series. It is supposed that a numpy array (n_samples, 1) with RR intervals is available, as well as beat label numpy array vector.
 
