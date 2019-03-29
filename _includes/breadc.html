@@ -12,7 +12,7 @@
               <a class="u-link-v5 g-color-main" href="{{site.url}}">Home</a>
               <i class="g-color-gray-light-v2 g-ml-5">/</i>
             </li>
-            {% assign arrayUniq = "contact,releases,blog" | split: "," %}
+            {% assign arrayUniq = "contact,releases,blog,license,credits,error" | split: "," %}
             {% assign breadcrumb = page.path | split: "/" %}
             {%for element in breadcrumb %}
                {% if element contains '.html' or element contains '.md' %}
