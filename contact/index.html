@@ -78,24 +78,24 @@ title: Contact
     <form>
       <div class="row">
         <div class="col-md-6 form-group g-mb-30">
-          <input class="form-control g-color-gray-dark-v5 g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--focus rounded-0 g-py-13 g-px-15 email-form" placeholder="Your email" v-model="from_email" type="text">
+          <input class="form-control g-color-gray-dark-v5 g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--focus rounded-0 g-py-13 g-px-15 email-form" placeholder="Your email" type="text">
         </div>
 
         <div class="col-md-6 form-group g-mb-30">
-          <input class="form-control g-color-gray-dark-v5 g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--focus rounded-0 g-py-13 g-px-15" placeholder="Your name" v-model="from_name" type="tel">
+          <input class="form-control g-color-gray-dark-v5 g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--focus rounded-0 g-py-13 g-px-15 name-form" placeholder="Your name" type="tel">
         </div>
 
         <div class="col-md-12 form-group g-mb-30">
-          <input class="form-control g-color-gray-dark-v5 g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--focus rounded-0 g-py-13 g-px-15" placeholder="Subject" v-model="subject" type="text">
+          <input class="form-control g-color-gray-dark-v5 g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--focus rounded-0 g-py-13 g-px-15 subject-form" placeholder="Subject"  type="text">
         </div>
 
         <div class="col-md-12 form-group g-mb-30">
-          <textarea class="form-control g-color-gray-dark-v5 g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--focus g-resize-none rounded-0 g-py-13 g-px-15" rows="7" v-model="message" placeholder="Message"></textarea>
+          <textarea class="form-control g-color-gray-dark-v5 g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--focus g-resize-none rounded-0 g-py-13 g-px-15 message-form" rows="7" placeholder="Message"></textarea>
         </div>
       </div>
 
       <div class="text-center g-m g-mb-20">
-        <button id="enviarEmail" @click="enviar" class="btn u-btn-primary text-uppercase rounded-0 g-px-25 g-py-13" type="submit" role="button">Send Message</button>
+        <button id="enviarEmail" class="btn u-btn-primary text-uppercase rounded-0 g-px-25 g-py-13" type="submit" role="button">Send Message</button>
       </div>
     </form>
   </div>

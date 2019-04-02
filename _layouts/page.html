@@ -23,6 +23,14 @@
   <!-- JS LINKS -->
   {% include js.html%}
 
+  {% if page.title == "Contact" %}
+  <!-- JS Customization -->
+  <script src="/assets/js/custom.js"></script>
+  {% endif%}
+
+  <!-- API STMPJS -->
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
+
 </head>
 
 <body>
@@ -35,7 +43,7 @@
 
   <div class="container g-mt-50 g-mb-60">
 
-  {{ content }}
+    {{ content }}
 
 
   </div>
