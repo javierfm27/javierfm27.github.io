@@ -2,93 +2,73 @@
 <script>
   var form_email, form_name, form_subject, form_message;
 
-  $(document).on('ready', function() {
-    // initialization of tabs
-    $.HSCore.components.HSTabs.init('[role="tablist"]');
+  $(document).on('ready', function () {
+      // initialization of tabs
+      $.HSCore.components.HSTabs.init('[role="tablist"]');
 
-    // initialization of header height offset
-    $.HSCore.helpers.HSHeightCalc.init();
+      // initialization of header height offset
+      $.HSCore.helpers.HSHeightCalc.init();
 
-    // initialization of scroll animation
-    $.HSCore.components.HSOnScrollAnimation.init('[data-animation]');
+      // initialization of scroll animation
+      $.HSCore.components.HSOnScrollAnimation.init('[data-animation]');
 
+      // initialization of counters
+      var counters = $.HSCore.components.HSCounter.init('[class*="js-counter"]');
 
-    // initialization of rating
-    $.HSCore.components.HSRating.init($('.js-rating'), {
-      spacing: 4
-    });
+      // initialization of chart pies with rtl option
+      var rtlItems = $.HSCore.components.HSChartPie.init('.js-pie-rtl', {
+        rtl: true
+      });
 
-    // initialization of popups with media
-    $.HSCore.components.HSPopup.init('.js-fancybox-media', {
-      helpers: {
-        media: {},
-        overlay: {
-          css: {
-            'background': 'rgba(255, 255, 255, .8)'
+      // initialization of rating
+      $.HSCore.components.HSRating.init($('.js-rating'), {
+        spacing: 4
+      });
+
+      // initialization of popups with media
+      $.HSCore.components.HSPopup.init('.js-fancybox-media', {
+        helpers: {
+          media: {},
+          overlay: {
+            css: {
+              'background': 'rgba(255, 255, 255, .8)'
+            }
           }
         }
-      }
+      });
+
+      // initialization of text animation (typing)
+      $(".u-text-animation.u-text-animation--typing").typed({
+        strings: [
+          "awesome template",
+          "perfect template",
+          "just like a boss"
+        ],
+        typeSpeed: 60,
+        loop: true,
+        backDelay: 1500
+      });
+
+      // initialization of go to
+      $.HSCore.components.HSGoTo.init('.js-go-to');
     });
 
-    // initialization of go to
-    $.HSCore.components.HSGoTo.init('.js-go-to');
-  });
+    $(window).on('load', function () {
+      // initialization of header
+      $.HSCore.components.HSHeader.init($('#js-header'));
+      $.HSCore.helpers.HSHamburgers.init('.hamburger');
 
-  $(window).on('load', function() {
-    // initialization of header
-    $.HSCore.components.HSHeader.init($('#js-header'));
-    $.HSCore.helpers.HSHamburgers.init('.hamburger');
-
-    // initialization of HSMegaMenu component
-    $('.js-mega-menu').HSMegaMenu({
-      event: 'hover',
-      pageContainer: $('.container'),
-      breakpoint: 991
+      // initialization of HSMegaMenu component
+      $('.js-mega-menu').HSMegaMenu({
+        event: 'hover',
+        pageContainer: $('.container'),
+        breakpoint: 991
+      });
     });
-  });
 
-  $(window).on('resize', function() {
-    setTimeout(function() {
-      $.HSCore.components.HSTabs.init('[role="tablist"]');
-    }, 200);
-  });
-
-  //Events for email sending
-  $(".email-form").focusout(function() {
-    form_email = $(this).val();
-  });
-
-  $(".name-form").focusout(function() {
-    form_name = $(this).val();
-  });
-
-  $(".subject-form").focusout(function() {
-    form_subject = $(this).val();
-  });
-
-  $(".message-form").focusout(function() {
-    form_message = $(this).val();
-  });
-
-  //Sending Email forward emailJs
-  $("#enviarEmail").click(function() {
-    console.log("Entra")
-    // var template_params = {
-    //   subject: form_subject,
-    //   from_name: form_name,
-    //   from_email: form_email,
-    //   message_html: form_message
-    // };
-    //
-    // var params_message = JSON.stringify(template_params);
-    // var service_id = "default_service";
-    // var template_id = "template_SDZsLF1w";
-    // emailjs.send(service_id, template_id, template_params)
-    //   .then(function(response) {
-    //     alert("MENSAJE ENVIADO");
-    //   }, function(error) {
-    //     alert("EMAIL NO HA SIDO ENVIADO", error);
-    //   });
-    // console.log("Termina de enviar");
-  });
+    $(window).on('resize', function () {
+      setTimeout(function () {
+        $.HSCore.components.HSTabs.init('[role="tablist"]');
+      }, 200);
+    });
 </script>
