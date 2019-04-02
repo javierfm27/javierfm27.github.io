@@ -1,6 +1,6 @@
 <script>
-  //initialization of emailJS variables
-  var form_email, form_name, form_message;
+  //initialization of emailJS variable
+  var form_email, form_name, form_message, form_subject;
 
   $(document).on('ready', function() {
     // initialization of carousel
@@ -55,6 +55,7 @@
   //EmailJS
   $(".email-form").focusout(function() {
     form_email = $(this).val();
+    console.log(form_email);
   });
 
   $(".name-form").focusout(function() {
@@ -64,17 +65,25 @@
 
   $(".subject-form").focusout(function() {
     form_subject = $(this).val();
+  });
 
+  $(".message-form").focusout(function() {
+    form_message = $(this).val();
+  });
 
-    $(".message-form").focusout(function() {
-      form_message = $(this).val();
-    });
+  //Sending Email forward emailJs
+  $("#enviarEmail").click(function() {
+    console.log("HOLA");
 
-    //Sending Email forward emailJs
-    $("#enviarEmail").click(function() {
-      var nodemailer = require('nodemailer');
-    });
-
-
+    var message_body = "<p>Hello this a message wrote by " + form_name + ". Her/him email is " + form_email + "</p><br><p>" + form_message + "</p>";
+    Email.send({
+      SecureToken: "21aeb15b-5d46-422e-85c8-f92db40fc340",
+      To: 'javitofm15@gmail.com',
+      From: "javitofm15@gmail.com",
+      Subject: form_subject,
+      Body: message_body
+    }).then(
+      message => alert(message)
+    );
   });
 </script>
