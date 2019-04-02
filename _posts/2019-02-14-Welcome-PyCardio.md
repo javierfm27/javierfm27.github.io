@@ -4,6 +4,7 @@ title: Welcome to PyCardio!
 author: javierfm27
 published: true
 category: [blog]
+permalink: /:categories/:year/:month/:title
 ---
 Welcome to the PyCardio Web!
 

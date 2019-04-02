@@ -4,6 +4,7 @@ title: HRV is ready!
 author: obarquero
 published: true
 category: [blog]
+permalink: /:categories/:year/:month/:title
 ---
 We are pleased to report that we launched our first module. HRV.
 
