@@ -1,74 +1,111 @@
 <!-- JS Plugins Init. -->
 <script>
-  var form_email, form_name, form_subject, form_message;
+  $(document).on('ready', function() {
+    // initialization of tabs
+    $.HSCore.components.HSTabs.init('[role="tablist"]');
 
-  $(document).on('ready', function () {
-      // initialization of tabs
-      $.HSCore.components.HSTabs.init('[role="tablist"]');
+    // initialization of header height offset
+    $.HSCore.helpers.HSHeightCalc.init();
 
-      // initialization of header height offset
-      $.HSCore.helpers.HSHeightCalc.init();
+    // initialization of scroll animation
+    $.HSCore.components.HSOnScrollAnimation.init('[data-animation]');
 
-      // initialization of scroll animation
-      $.HSCore.components.HSOnScrollAnimation.init('[data-animation]');
+    // initialization of counters
+    var counters = $.HSCore.components.HSCounter.init('[class*="js-counter"]');
 
-      // initialization of counters
-      var counters = $.HSCore.components.HSCounter.init('[class*="js-counter"]');
+    // initialization of chart pies with rtl option
+    var rtlItems = $.HSCore.components.HSChartPie.init('.js-pie-rtl', {
+      rtl: true
+    });
 
-      // initialization of chart pies with rtl option
-      var rtlItems = $.HSCore.components.HSChartPie.init('.js-pie-rtl', {
-        rtl: true
-      });
+    // initialization of rating
+    $.HSCore.components.HSRating.init($('.js-rating'), {
+      spacing: 4
+    });
 
-      // initialization of rating
-      $.HSCore.components.HSRating.init($('.js-rating'), {
-        spacing: 4
-      });
-
-      // initialization of popups with media
-      $.HSCore.components.HSPopup.init('.js-fancybox-media', {
-        helpers: {
-          media: {},
-          overlay: {
-            css: {
-              'background': 'rgba(255, 255, 255, .8)'
-            }
+    // initialization of popups with media
+    $.HSCore.components.HSPopup.init('.js-fancybox-media', {
+      helpers: {
+        media: {},
+        overlay: {
+          css: {
+            'background': 'rgba(255, 255, 255, .8)'
           }
         }
-      });
-
-      // initialization of text animation (typing)
-      $(".u-text-animation.u-text-animation--typing").typed({
-        strings: [
-          "awesome template",
-          "perfect template",
-          "just like a boss"
-        ],
-        typeSpeed: 60,
-        loop: true,
-        backDelay: 1500
-      });
-
-      // initialization of go to
-      $.HSCore.components.HSGoTo.init('.js-go-to');
+      }
     });
 
-    $(window).on('load', function () {
-      // initialization of header
-      $.HSCore.components.HSHeader.init($('#js-header'));
-      $.HSCore.helpers.HSHamburgers.init('.hamburger');
-
-      // initialization of HSMegaMenu component
-      $('.js-mega-menu').HSMegaMenu({
-        event: 'hover',
-        pageContainer: $('.container'),
-        breakpoint: 991
-      });
+    // initialization of text animation (typing)
+    $(".u-text-animation.u-text-animation--typing").typed({
+      strings: [
+        "awesome template",
+        "perfect template",
+        "just like a boss"
+      ],
+      typeSpeed: 60,
+      loop: true,
+      backDelay: 1500
     });
 
-    $(window).on('resize', function () {
-      setTimeout(function () {
-        $.HSCore.components.HSTabs.init('[role="tablist"]');
-      }, 200);
+    // initialization of go to
+    $.HSCore.components.HSGoTo.init('.js-go-to');
+  });
+
+  $(window).on('load', function() {
+    // initialization of header
+    $.HSCore.components.HSHeader.init($('#js-header'));
+    $.HSCore.helpers.HSHamburgers.init('.hamburger');
+
+    // initialization of HSMegaMenu component
+    $('.js-mega-menu').HSMegaMenu({
+      event: 'hover',
+      pageContainer: $('.container'),
+      breakpoint: 991
     });
+  });
+
+  $(window).on('resize', function() {
+    setTimeout(function() {
+      $.HSCore.components.HSTabs.init('[role="tablist"]');
+    }, 200);
+  });
+
+  //EVENTS TO GET DATA
+  var template_params = {
+    from_email: "",
+    from_name: "",
+    subject: "",
+    message_html: ""
+  }
+  $(".email-form").focusout(function() {
+    template_params.from_email = $(this).val();
+  });
+  $(".name-form").focusout(function() {
+    template_params.from_name = $(this).val();
+  });
+  $(".subject-form").focusout(function() {
+    template_params.subject = $(this).val();
+  });
+  $(".message-form").focusout(function() {
+    template_params.message_html = $(this).val();
+  });
+  $("#enviarEmail").click(function() {
+    alert("ENTRA");
+    var data = {
+      service_id: 'javitofm15_gmail_com',
+      template_id: 'template_SDZsLF1w',
+      user_id: 'user_Hopd6SgEyxvsIFC4VTcCc',
+      template_params: JSON.stringify(template_params)
+    };
+    alert(JSON.stringify(template_params))
+    $.ajax('https://api.emailjs.com/api/v1.0/email/send', {
+      type: 'POST',
+      data: JSON.stringify(data),
+      contentType: 'application/json'
+    }).done(function() {
+      alert('Your mail is sent!');
+    }).fail(function(error) {
+      alert('Oops... ' + JSON.stringify(error));
+    });
+  });
 </script>
