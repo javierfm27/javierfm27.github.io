@@ -90,13 +90,16 @@
     template_params.message_html = $(this).val();
   });
   $("#enviarEmail").click(function() {
-    alert("SE ENVIA EMAIL")
-    emailjs.init("user_Hopd6SgEyxvsIFC4VTcCc");
-    emailjs.send('javitofm15_gmail_com', 'template_SDZsLF1w', template_params)
-      .then(function(response) {
-         console.log('SUCCESS!', response.status, response.text);
-      }, function(error) {
-         console.log('FAILED...', error);
-      });
+    // emailjs.init("user_Hopd6SgEyxvsIFC4VTcCc");
+    // template_params = JSON.stringify(template_params);
+    var service_id = "default_service";
+    var template_id = "template_SDZsLF1w";
+    emailjs.send(service_id, template_id, template_params)
+    .then(function(response) {
+      console.log('SUCCESS!', response.status, response.text);
+    }, function(error) {
+      console.log('FAILED...', error);
+    });
+    alert("SE ENVIA");
   });
 </script>

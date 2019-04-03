@@ -9,7 +9,7 @@ title: Releases
     {% for post_release in site.categories.releases %}
       <!-- CONTENIDO DE RELEASE -->
       <div class="col-md-8 u-shadow-v4 g-bg-white g-brd-around g-brd-gray-light-v4 g-line-height-2 g-pa-40 g-mb-30" role="alert">
-        <h3 class="h2 g-font-weight-300 g-mb-20">{{post_release.title}}</h3>
+        <h3 class="h2 g-font-weight-300 g-mb-20"><a href="{{post_release.url}}">{{post_release.title}}</a></h3>
         <ul class="u-list-inline g-mb-20">
           <li class="list-inline-item">
             <a class="u-tags-v1 g-color-white g-bg-blue g-bg-black--hover g-py-4 g-px-10" href="#">Release</a>
@@ -19,6 +19,7 @@ title: Releases
         </ul>
         {% assign first_char = post_release.content | slice: 3 %}
         <p class="mb-0"><span class="u-dropcap g-color-primary g-mr-2 g-mb-10">{{post_release.content | slice: 3}}</span>{{ post_release.content | replace_first: first_char | truncate: 200}}</p>
+        <p>{{paginator.posts}}</p>
       </div>
       {% if post_release == site.categories.releases.first %}
           <!-- LIST OF RELEASES -->
