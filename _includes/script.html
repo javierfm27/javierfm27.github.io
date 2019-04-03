@@ -96,9 +96,10 @@
     var template_id = "template_SDZsLF1w";
     emailjs.send(service_id, template_id, template_params)
     .then(function(response) {
-      console.log('SUCCESS!', response.status, response.text);
+      alert('SUCCESS!', response.status, response.text);
     }, function(error) {
-      console.log('FAILED...', error);
+      alert('FAILED...', error);
     });
+    alert("Email Send!");
   });
 </script>
