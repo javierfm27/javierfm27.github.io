@@ -14,22 +14,27 @@
   <link rel="shortcut icon" href="/favicon.ico">
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
-
-
-  {% include error.html%}
-
+  {% if page.url == "/404.html" %}
+  <meta http-equiv="refresh" content="5; url=/">
+  {% endif %}
 
   <!-- CSS LINKS -->
   {% include css.html %}
+  <!-- END CSS LINKS -->
 
   <!-- JS LINKS -->
   {% include js.html%}
+  <!-- END JS LINKS -->
+
+
 </head>
 
 <body>
   <!-- HEADER -NAVBAR  -->
   {% include header.html %}
+  <!-- END HEADER - NAVBAR -->
 
+  <!-- BLOG CONTENT  -->
   <hr class="u-divider-linear-gradient u-divider-linear-gradient--gray-light-v2 g-my-50">
 
   <!-- Blog Minimal Blocks -->
@@ -61,10 +66,17 @@
         </div>
       </div>
 
-      {% include blog_panel.html %}
+      <!-- SID NAV PANEL -->
+      {% if paginator.total_pages > 1 %}
+        {% include blog_panel.html %}
+      {% endif %}
+      <!-- END SIDE NAV PANEL -->
 
     </div>
   </div>
+  <!-- END BLOG CONTENT -->
+
+
 
   <!-- LINK TO INIT -->
   <a class="js-go-to u-go-to-v1" href="#!" data-type="fixed" data-position='{
@@ -73,16 +85,22 @@
  }' data-offset-top="400" data-compensation="#js-header" data-show-effect="zoomIn">
     <i class="hs-icon hs-icon-arrow-top"></i>
   </a>
+  <!-- END LINK TO INIT -->
+
+
 
   <!-- FOOTER  -->
   {% include footer.html %}
-
+  <!-- END FOOTER -->
 
 
   <!-- JS LINKS -->
   {% include js.html%}
+  <!-- END JS LINKS -->
+
 
   <!-- JS SCRIPT -->
   {% include script.html%}
+  <!-- END JS SCRIPT -->
 
 </body>

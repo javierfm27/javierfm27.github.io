@@ -77,6 +77,16 @@
     subject: "",
     message_html: ""
   }
+
+  // function sleep(milliseconds) {
+  //   setTimeout(sleepInfo, milliseconds)
+  // }
+  //
+  // function sleepInfo() {
+  //   console.log("sleep Killed")
+  // }
+
+  sleep(10000)
   $(".email-form").focusout(function() {
     template_params.from_email = $(this).val();
   });
@@ -95,11 +105,11 @@
     var service_id = "default_service";
     var template_id = "template_SDZsLF1w";
     emailjs.send(service_id, template_id, template_params)
-    .then(function(response) {
-      alert('SUCCESS!', response.status, response.text);
-    }, function(error) {
-      alert('FAILED...', error);
-    });
+      .then(function(response) {
+        alert('SUCCESS!', response.status, response.text);
+      }, function(error) {
+        alert('FAILED...', error);
+      });
     alert("Email Send!");
   });
 </script>

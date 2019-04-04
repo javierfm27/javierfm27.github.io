@@ -5,7 +5,6 @@ title: Releases
 <div class="container g-mt-20">
   <div class="row">
 
-    {% assign iterator = 0 %}
     {% for post_release in site.categories.releases %}
       <!-- CONTENIDO DE RELEASE -->
       <div class="col-md-8 u-shadow-v4 g-bg-white g-brd-around g-brd-gray-light-v4 g-line-height-2 g-pa-40 g-mb-30" role="alert">
@@ -19,11 +18,13 @@ title: Releases
         </ul>
         {% assign first_char = post_release.content | slice: 3 %}
         <p class="mb-0"><span class="u-dropcap g-color-primary g-mr-2 g-mb-10">{{post_release.content | slice: 3}}</span>{{ post_release.content | replace_first: first_char | truncate: 200}}</p>
-        <p>{{paginator.posts}}</p>
       </div>
+      <!-- END CONTENIDO DE RELEASE -->
+
       {% if post_release == site.categories.releases.first %}
           <!-- LIST OF RELEASES -->
           {% include list_releases.html %}
+          <!-- END LIST OF RELEASES -->
       {% endif %}
     {% endfor %}
 

@@ -15,18 +15,25 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
 
-  {% include error.html%}
+  {% if page.url == "/404.html" %}
+  <meta http-equiv="refresh" content="5; url=/">
+  {% endif %}
 
   <!-- CSS LINKS -->
   {% include css.html %}
+  <!-- END CSS LINKS -->
 
   <!-- JS LINKS -->
   {% include js.html%}
+  <!-- END JS LINKS -->
+
+
 </head>
 
 <body>
   <!-- HEADER -NAVBAR  -->
   {% include header.html %}
+  <!-- END HEADER - NAVBAR -->
 
   <hr class="u-divider-linear-gradient u-divider-linear-gradient--gray-light-v2 g-my-50">
 
@@ -46,12 +53,18 @@
         {% assign first_char = content | slice: 3 %}
         <p class="mb-0"><span class="u-dropcap g-color-primary g-mr-10 g-mb-10">{{content | slice: 3}}</span>{{ content | replace_first: first_char}}</p>
       </div>
+      <!-- END CONTENIDO DE RELEASE -->
 
-      <!-- LIST OF RELEASES -->
-      {% include list_releases.html%}
+
+
+      <!-- LIST OF RELEASES  -->
+      {% include list_releases.html %}
+      <!-- END LIST OF RELEASES-->
 
     </div>
   </div>
+
+
 
   <!-- LINK TO INIT -->
   <a class="js-go-to u-go-to-v1" href="#!" data-type="fixed" data-position='{
@@ -60,14 +73,24 @@
  }' data-offset-top="400" data-compensation="#js-header" data-show-effect="zoomIn">
     <i class="hs-icon hs-icon-arrow-top"></i>
   </a>
+  <!-- END LINK TO INIT  -->
+
+
 
   <!-- FOOTER  -->
   {% include footer.html %}
+  <!-- END FOOTER -->
+
+
 
   <!-- JS LINKS -->
   {% include js.html%}
+  <!-- END JS LINKS -->
+
 
   <!-- JS SCRIPT -->
   {% include script.html%}
+  <!-- END JS SCRIPT -->
+
 
 </body>

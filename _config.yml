@@ -27,7 +27,7 @@ plugins:
   - jekyll-redirect-from
   - jekyll-sitemap
   - jekyll-github-metadata
-  - jekyll-paginate
+  - jekyll-paginate-v2
 
 future: true
 
@@ -37,5 +37,8 @@ permalink: /:path/:title.html
 #Variable for static files
 path_assets: /assets/
 
-#Number of posts
-paginate: 2
+#Pagination settings
+pagination:
+  enabled: true
+  per_page: 2 #2 posts for page
+  permalink: /page_:num #url for pages

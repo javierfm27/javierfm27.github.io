@@ -15,24 +15,30 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
 
+  {% if page.url == "/404.html" %}
+  <meta http-equiv="refresh" content="5; url=/">
+  {% endif %}
 
-  {% include error.html%}
-
-  <!-- CSS -->
+  <!-- CSS LINKS -->
   {% include css.html %}
+  <!-- END CSS LINKS -->
 
   <!-- JS LINKS -->
   {% include js.html%}
+  <!-- END JS LINKS -->
+
+
 </head>
 
 
 <body>
   <main>
 
-    <!-- Include Header-->
+    <!-- HEADER-->
     {% include header.html %}
+    <!-- END HEADER  -->
 
-    <!-- CAMBIAR A CARROUSEL  -->
+    <!-- MAIN  -->
     <!-- Promo Block -->
     <div class="g-flex-centered g-bg-pos-center g-bg-img-hero g-pos-rel g-z-index-1 g-overflow-hidden" style="background-image: url(/assets/img/bg/bg-image1.png);" data-calc-target="#js-header">
       <div class="g-pos-abs g-top-0 g-left-0" data-animation="fadeInDown" data-animation-delay="100" data-animation-duration="1500">
@@ -107,7 +113,7 @@
           <ul class="list-unstyled g-color-gray-dark-v4 g-mb-40">
             <li class="d-flex g-mb-10">
               <i class="icon-check g-color-primary g-mt-5 g-mr-10"></i>
-              <span class="emphasized">ECG analysis</span>:  QRS detection, RR-interval time series extraction, ECG complete delineation.
+              <span class="emphasized">ECG analysis</span>: QRS detection, RR-interval time series extraction, ECG complete delineation.
             </li>
             <li class="d-flex g-mb-10">
               <i class="icon-check g-color-primary g-mt-5 g-mr-10"></i>
@@ -204,24 +210,30 @@
     </div>
     <!-- End Footer -->
 
-    <!-- Include Footer -->
+    <!--  FOOTER MAIN -->
     {% include footer.html %}
+    <!-- END FOOTER MAIN -->
 
+    <!-- LINK TO INIT -->
     <a class="js-go-to u-go-to-v1" href="#!" data-type="fixed" data-position='{
      "bottom": 15,
      "right": 15
    }' data-offset-top="400" data-compensation="#js-header" data-show-effect="zoomIn">
       <i class="hs-icon hs-icon-arrow-top"></i>
     </a>
+    <!-- END LINK TO INIT -->
   </main>
+  <!-- END MAIN -->
 
   <div class="u-outer-spaces-helper"></div>
 
-  <!-- JS INCLUDE -->
+  <!-- JS  -->
   {% include js.html %}
+  <!-- END JS -->
 
   <!-- JS Plugins Init. -->
   {% include script.html %}
+  <!-- END PLUGINS INIT -->
 
 </body>
 

@@ -14,19 +14,26 @@
   <link rel="shortcut icon" href="/favicon.ico">
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+  {% if page.url == "/404.html" %}
+  <meta http-equiv="refresh" content="5; url=/">
+  {% endif %}
 
-  {% include error.html%}
+
 
   <!-- CSS LINKS -->
   {% include css.html %}
+  <!-- END CSS LINKS -->
 
   <!-- JS LINKS -->
   {% include js.html%}
+  <!-- END JS LINKS -->
+
 
   {% if page.title == "Contact" %}
   <!-- JS Customization -->
   <script src="/assets/js/custom.js"></script>
   {% endif%}
+
 
   <!-- API STMPJS -->
   <script src="https://smtpjs.com/v3/smtp.js"></script>
@@ -36,17 +43,26 @@
 <body>
   <!-- HEADER -NAVBAR  -->
   {% include header.html %}
+  <!-- END HEADER NAVBAR -->
+
 
   <!-- BREADCRUMBER -->
   {% include breadc.html %}
+  <!-- END BREADCRUMBER -->
 
 
+
+  <!-- CONTENT -->
   <div class="container g-mt-50 g-mb-60">
 
     {{ content }}
 
 
   </div>
+  <!-- END CONTENT  -->
+
+
+
 
   <!-- LINK TO INIT -->
   <a class="js-go-to u-go-to-v1" href="#!" data-type="fixed" data-position='{
@@ -55,13 +71,19 @@
  }' data-offset-top="400" data-compensation="#js-header" data-show-effect="zoomIn">
     <i class="hs-icon hs-icon-arrow-top"></i>
   </a>
-  
+  <!-- END LINK TO INIT  -->
+
+
+
   <!-- FOOTER  -->
   {% include footer.html %}
+  <!-- END FOOTER -->
 
 
 
   <!-- JS SCRIPT -->
   {% include script.html%}
+  <!-- END JS SCRIPT -->
+
 
 </body>

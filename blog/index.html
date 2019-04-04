@@ -1,13 +1,18 @@
 ---
 layout: page
 title: Blog
+category: blog
+pagination:
+  enabled: true
+  category: blog
+  per_page: 2
 ---
 <!-- Blog Minimal Blocks -->
 <div class="container g-pt-40 g-pb-20">
   <div class="row justify-content-between">
     <div class="col-lg-9 g-mb-80">
       <div class="g-pr-20--lg">
-        {% for post_blog in site.categories.blog %}
+        {% for post_blog in paginator.posts %}
         <!-- Blog Minimal Blocks -->
         <article class="g-mb-50">
           <div class="g-mb-10">
@@ -30,10 +35,23 @@ title: Blog
         </article>
         {% endfor %}
         <!-- End Blog Minimal Blocks -->
+
+        {% if paginator.total_pages > 1 %}
+          <!-- PAGINATOR -->
+          <div>
+            {% include divPaginator.html %}
+          </div>
+          <!-- ENDPAGINATOR -->
+        {% endif %}
+
       </div>
     </div>
 
+    <!-- SID NAV PANEL -->
     {% include blog_panel.html %}
+    <!-- END SIDE NAV PANEL -->
 
   </div>
 </div>
+
+<p>{{paginator.total_posts}}</p>
