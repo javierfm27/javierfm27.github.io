@@ -41,4 +41,4 @@ path_assets: /assets/
 pagination:
   enabled: true
   per_page: 2 #2 posts for page
-  permalink: /page_:num #url for pages
+  permalink: /page/:num #url for pages
