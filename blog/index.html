@@ -2,17 +2,13 @@
 layout: page
 title: Blog
 category: blog
-pagination:
-  enabled: true
-  category: blog
-  per_page: 2
 ---
 <!-- Blog Minimal Blocks -->
 <div class="container g-pt-40 g-pb-20">
   <div class="row justify-content-between">
     <div class="col-lg-9 g-mb-80">
       <div class="g-pr-20--lg">
-        {% for post_blog in paginator.posts %}
+        {% for post_blog in site.categories.blog %}
         <!-- Blog Minimal Blocks -->
         <article class="g-mb-50">
           <div class="g-mb-10">
@@ -20,7 +16,7 @@ pagination:
             <h2 class="h4 g-color-black g-font-weight-600 mb-3">
               <a class="u-link-v5 g-color-black g-color-primary--hover" href="{{post_blog.url}}">{{post_blog.title}} </a>
             </h2>
-            <a class="u-tags-v1 g-color-white g-bg-green g-bg-black--hover g-py-4 g-px-10" href="#">Blog</a>
+            <a class="u-tags-v1 g-color-white g-bg-green g-bg-black--hover g-py-4 g-px-10" href="{{site.url}}/blog/">Blog</a>
             <p class="g-color-gray-dark-v4 g-line-height-1_8">{{ post_blog.content | truncate: 150 }} </p>
           </div>
 

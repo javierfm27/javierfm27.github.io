@@ -38,7 +38,7 @@ permalink: /:path/:title.html
 path_assets: /assets/
 
 #Pagination settings
-pagination:
-  enabled: true
-  per_page: 2 #2 posts for page
-  permalink: /page/:num #url for pages
+# pagination:
+#   enabled: true
+#   per_page: 2 #2 posts for page
+#   permalink: /page/:num #url for pages
