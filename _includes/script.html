@@ -86,7 +86,7 @@
   //   console.log("sleep Killed")
   // }
 
-  sleep(10000)
+  //sleep(10000)
   $(".email-form").focusout(function() {
     template_params.from_email = $(this).val();
   });
@@ -100,8 +100,7 @@
     template_params.message_html = $(this).val();
   });
   $("#enviarEmail").click(function() {
-    // emailjs.init("user_Hopd6SgEyxvsIFC4VTcCc");
-    // template_params = JSON.stringify(template_params);
+    alert("HOLA")
     var service_id = "default_service";
     var template_id = "template_SDZsLF1w";
     emailjs.send(service_id, template_id, template_params)
