@@ -100,7 +100,6 @@
     template_params.message_html = $(this).val();
   });
   $("#enviarEmail").click(function() {
-    alert("HOLA")
     var service_id = "default_service";
     var template_id = "template_SDZsLF1w";
     emailjs.send(service_id, template_id, template_params)
